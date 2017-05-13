@@ -2,6 +2,12 @@
 
 window.onload = () => {
   const scene = new CanvasScene(document.getElementById('canvas'));
+  scene.run();
+  // Create levels
+  const levels = [];
+  for (let i = 0; i < 100; i++) {
+    levels.push(new SimpleGameLevel(i + 1));
+  }
   // Transition to next level on completion
   for (let i = 0; i < levels.length - 1; i++) {
     levels[i].addCompletionHandler(() => {
@@ -19,7 +25,6 @@ window.onload = () => {
         '128px Helvetica, Arial',
         'white'
       ));
-      scene.run();
     });
   }
   // Show green screen on game completion
@@ -37,10 +42,3 @@ window.onload = () => {
   // Start running the first level
   levels[0].run(scene);
 };
-
-const levels = [
-  // scoreGoal, timeLimit, targetRadius, targetVelocity
-  new SimpleGameLevel(20, 10, 200, 20),
-  new SimpleGameLevel(40, 8, 150, 25),
-  new SimpleGameLevel(60, 6, 50, 30),
-];
