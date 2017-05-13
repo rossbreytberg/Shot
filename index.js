@@ -5,7 +5,7 @@ window.onload = () => {
   scene.run();
   // Create levels
   const levels = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 20; i++) {
     levels.push(new SimpleGameLevel(i + 1));
   }
   // Transition to next level on completion
