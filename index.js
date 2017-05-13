@@ -19,9 +19,9 @@ window.onload = () => {
     levels[i].addFailureHandler(() => {
       scene.addObjectToTopLayer(new BackgroundObject('red'));
       scene.addObjectToNewLayer(new TextObject(
-        'Game Over',
         scene.width / 2,
         scene.height / 2,
+        'Game Over',
         '128px Helvetica, Arial',
         'white'
       ));
@@ -31,13 +31,12 @@ window.onload = () => {
   levels[levels.length - 1].addCompletionHandler(() => {
     scene.addObjectToTopLayer(new BackgroundObject('green'));
     scene.addObjectToNewLayer(new TextObject(
-      'Winner',
       scene.width / 2,
       scene.height / 2,
+      'Winner',
       '128px Helvetica, Arial',
       'white'
     ));
-    scene.run();
   });
   // Start running the first level
   levels[0].run(scene);
